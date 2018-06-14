@@ -4,7 +4,7 @@
 
 ## TRAVIS: https://travis-ci.com/mrebb/11-express 
 
-## HEROKU: https://restapilab.herokuapp.com 
+## HEROKU: https://express-server-lab.herokuapp.com 
 
 ## Express module
 
