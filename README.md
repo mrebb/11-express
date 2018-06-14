@@ -1,14 +1,14 @@
 ![cf](https://i.imgur.com/7v5ASc8.png) 11: Express and Babel
 ======
-<img src="https://travis-ci.com/mrebb/09-rest-persistence.svg?branch=madhu">
+<img src="https://travis-ci.com/mrebb/11-express.svg?branch=madhu">
 
-## TRAVIS: https://travis-ci.com/mrebb/09-rest-persistence 
+## TRAVIS: https://travis-ci.com/mrebb/11-express 
 
 ## HEROKU: https://restapilab.herokuapp.com 
 
-## Rest api module
+## Express module
 
-* Handles GET, POST, PUT and DELETE methods 
+* Handles GET, POST, DELETE methods 
 * GET handles 'api/v1/notes' when queryString has valid or empty ID
 * POST handles 'api/v1/notes' with request body passed . 
 * DELETE handles 'api/v1/notes' when queryString has valid or empty ID 

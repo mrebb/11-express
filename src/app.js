@@ -13,18 +13,12 @@ require('../src/models/notes');
 // Flag to know if we are up and going
 let isRunning = false;
 
-// This will open up an http server connection, using router.route
-// as our entry point.  That method will get run on every connection
-//const app = http.createServer( router.route );
 
-module.exports = {
+const server = {
   start: (port) => {
     if(! isRunning) {
-      app.listen(port, (err) => {
-        if(err) { throw err; }
-        // Tick the running flag
-        isRunning = true;
-        console.log('Server is up on port', port);
+      return app.listen(port, function () {
+        console.log('app is listening at port %s', port);
       });
     }
     else {
@@ -32,9 +26,11 @@ module.exports = {
     }
     
   },
-
-  stop: () => { 
-    
-    isRunning = false;
-  },
+  // stop: () => { 
+  //   isRunning = false;
+  //   console.log(server.connection);
+  //   server.connection.close();
+  // },
 };
+
+export default server;

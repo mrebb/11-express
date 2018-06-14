@@ -1,11 +1,10 @@
 'use strict';
 require('dotenv').config();
+
 // Pull in all of our possible storage modules
 import memoryStorage from './memory.js';
 import fileStorage from './filesystem.js';
-
 let dataStorageModule = {};
-console.log(process.env.STORAGE);
 
 // Based on an entry in our .env file (or really any other mechanism you want)
 // Switch this module to export THAT storage mechanism
@@ -13,7 +12,6 @@ console.log(process.env.STORAGE);
 // on any logic you choose
 switch( process.env.STORAGE ) {
 case 'filesystem':
-  console.log('i reached data store');
   dataStorageModule = fileStorage;
   break;
 default:

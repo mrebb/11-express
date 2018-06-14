@@ -5,12 +5,11 @@ import app from '../../../src/app';
 import uuid from 'uuid/v4';
 
 describe('Simple Web Server', () => {
+  var server;
   beforeAll( () => {
-    app.start(8080);
-    
+    server=app.start(8080);
   });
   afterAll( () => {
-    var server = app.start(8080);
     server.close();
   });
   it('handles a post request to create note with unique ID along with JSON object', () => {
@@ -21,7 +20,6 @@ describe('Simple Web Server', () => {
       .then(response => {
         expect(response.status).toEqual(200);
         expect(response.text).toEqual(expect.stringContaining('java'));
-        //app.stop();
       });
   });
   it('handles a post request to create note with custom_ID along with JSON object', () => {

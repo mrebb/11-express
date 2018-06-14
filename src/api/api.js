@@ -4,22 +4,13 @@ const app = express();
 app.use(express.json());
 const router = express.Router();
 import Notes from '../models/notes.js';
-//const Notes = require('../models/notes.js');
-
 /**
  * Simple method to send a JSON response (all of the API methods will use this)
  * @param res
  * @param data
  */
-// let sendJSON = (res,data) => {
-//   res.statusCode = 200;
-//   res.statusMessage = 'OK';
-//   res.setHeader('Content-Type', 'application/json');
-//   res.write( JSON.stringify(data) );
-//   res.end();
-// };
+
 router.get('/api/v1/notes/', (req,res) => {
-  console.log(req.body.id);
   if ( req.body.id!==undefined ) {
     Notes.findOne(req.params.id)
       .then( data => res.send(data) )
@@ -38,7 +29,6 @@ router.get('/api/v1/notes/', (req,res) => {
   //   .catch( err => serverError(res,err) );
 });
 router.get('/api/v1/notes/:id', (req,res) => {
-  console.log(req.params.id);
   if ( req.params.id!==null ) {
     Notes.findOne(req.params.id)
       .then( data => res.send(data) )
